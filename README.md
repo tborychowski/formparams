@@ -22,10 +22,12 @@ jQuery plugin to GET or SET form fields to/from JS object.
 
 		
 		
-		// SET form fields from object (form fields that do not have the corresponding value in the object are left unchanged):
+		// SET form fields from object
+		// (form fields that do not have the corresponding value in the object are left unchanged):
 		$('#testForm').formParams(formObj);
 
-		// SET form fields from object and clear form fields that don't have the corresponding value in the object
+		// SET form fields from object 
+		// and clear form fields that don't have the corresponding value in the object
 		$('#testForm').formParams(formObj, true);
 	});
 	
