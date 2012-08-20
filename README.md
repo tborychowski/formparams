@@ -34,4 +34,4 @@ jQuery plugin to GET or SET form fields to/from JS object.
 	});
 	
 
-Demo page available soon (download and open index.html (server required for less compilation))
+Demo page available soon (download and open index.html)
