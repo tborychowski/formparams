@@ -5,7 +5,9 @@ jQuery plugin to GET or SET form fields to/from JS object.
 
 ### Basic usage
 	<form id="testForm">
-		<input name="name" placeholder="name" value="tom"/><input name="surname" placeholder="surname" value="B"/><input type="checkbox" name="optin" />Opt-In<br>
+		<input name="name" placeholder="name" value="tom"/>
+		<input name="surname" placeholder="surname" value="B"/>
+		<input type="checkbox" name="optin" />Opt-In<br>
 		<input type="radio" name="gender" value="m" />M <input type="radio" name="gender" value="f" />F<br>
 		<input name="address[line1]" placeholder="address line 1" value=""/>
 		<input name="address[line2]" placeholder="address line 2" value=""/>
