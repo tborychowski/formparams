@@ -2,7 +2,6 @@
  * @author Tom
  * 
  * Based on: http://javascriptmvc.com/docs.html#!jQuery.fn.formParams
- * Original Source: https://github.com/jupiterjs/jquerymx/blob/master/dom/form_params/form_params.js
  *
  * 
  * GETs or SETs form parameters to/from Object.
@@ -91,10 +90,14 @@
 				if (el.type === 'radio' && !el.checked) return;																	// return only "checked" radio value
 				if (el.type === 'checkbox') value = el.checked;																	// convert chekbox to [true | false]
 
-				var $el=$(el); if($el.data('changed')!==true && value==$el.attr('placeholder')) value='';						//  clear placeholder valus for IEs
+				var $el=$(el); if($el.data('changed')!==true && value==$el.attr('placeholder')) value='';						// clear placeholder valus for IEs
 
 				if (convert){
-					if (isNumber(value) && parseFloat(value)+'' === value) value = parseFloat(value);
+					if (isNumber(value)){
+						var tv = parseFloat(value), cmp=tv+'';
+						if (value.indexOf('.') > 0) cmp = tv.toFixed(value.split('.')[1].length);								// convert (string)100.00 to (int)100 
+						if (cmp === value) value = tv;
+					}
 					else if (value === 'true') value = true;
 					else if (value === 'false') value = false;
 					if (value === '') value = undefined;
