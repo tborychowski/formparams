@@ -1,13 +1,14 @@
 $(function(){
-	App.Publish('log', ['App Ready!']);
+	//App.Publish('log', ['App Ready!']);
 
 	var form = $('#testForm');
 
 	$('#btnRead').on('click', function(){
 		var formData = form.formParams();
-		console.log(formData);
 
-		App.Publish('log', [ unescape($.param(formData)) ]);
+		console.log(formData);
+		var log = unescape($.param(formData)).replace(/&/g, '<br>') + '<br>------------------------------------------------' ;
+		App.Publish('log', [ log ]);
 	});
 
 
