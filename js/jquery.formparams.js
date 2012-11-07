@@ -32,39 +32,47 @@
 	var keyBreaker = /[^\[\]]+/g,
 		numberMatcher = /^[\-+]?[0-9]*\.?[0-9]+([eE][\-+]?[0-9]+)?$/,
 		isNumber = function (value) {
-			if (typeof value == 'number') return true;
-			if (typeof value != 'string') return false;
+			if (typeof value === 'number') return true;
+			if (typeof value !== 'string') return false;
 			return value.match(numberMatcher);
+		},
+		decodeEntities = function (str) {
+			var d = document.createElement('div');
+			d.innerHTML = str;
+			return d.innerText || d.textContent;
 		};
+
 
 	$.fn.extend({
 		formParams: function (params, convert) {
 			if (typeof params === 'boolean') { convert = params; params = null; }
 			if (params) return this.setParams(params, convert);																	// SET
-			else if (this[0].nodeName.toLowerCase() == 'form' && this[0].elements) {											// GET
+			else if (this[0].nodeName.toLowerCase() === 'form' && this[0].elements) {											// GET
 				return jQuery(jQuery.makeArray(this[0].elements)).getParams(convert);
 			}
 			//return jQuery("input[name], textarea[name], select[name]", this[0]).getParams(convert);
 		},
 
 
-		setParams: function (params, clear) {
-			this.find("[name]").each(function () {																				// Find all the inputs
-				var name = $(this).attr("name"), value = params[name];
+		setParams: function (params, clear) {																					/*jshint eqeqeq: false*/
+			this.find('[name]').each(function () {																				// Find all the inputs
+				var name = $(this).attr('name'), value = params[name];
 
 				if (name.indexOf('[') > -1) {																					// if name is object, e.g. user[name], userData[address][street], update value to read this correctly
 					var names = name.replace(/\]/g, '').split('['), i = 0, n = null, v = params;
 					for (; n = names[i++] ;) if (v[n]) v = v[n]; else { v = undefined; break; }
 					value = v;
 				}
-				
+
 				if (clear !== true && value === undefined) return;																// if clear==true and no value = clear field, otherwise - leave it as it was
 				if (value === null || value === undefined) value = '';															// if no value - clear field
+
+				value = decodeEntities(value);																					// decode html special chars (entities)
 
 				if (this.type === 'radio') this.checked = (this.value == value);
 				else if (this.type === 'checkbox') this.checked = value;
 				else {
-					if ("placeholder" in document.createElement("input")) this.value = value;									// normal browser
+					if ('placeholder' in document.createElement('input')) this.value = value;									// normal browser
 					else {																										// manually handle placeholders for specIEl browser
 						var el = $(this);
 						if (this.value != value && value !== '') el.data('changed', true);
@@ -82,9 +90,9 @@
 
 			this.each(function () {
 				var el = this, type = el.type && el.type.toLowerCase();
-				if ((type == 'submit') || !el.name)  return;																	// if we are submit, ignore
-				
-				var key = el.name, value = $.data(el, "value") || $.fn.val.call([el]),
+				if ((type === 'submit') || !el.name)  return;																	// if we are submit, ignore
+
+				var key = el.name, value = $.data(el, 'value') || $.fn.val.call([el]),
 					parts = key.match(keyBreaker), lastPart;																	// make an array of values
 
 				if (el.type === 'radio' && !el.checked) return;																	// return only "checked" radio value
