@@ -1,31 +1,24 @@
 /**
+ * GETs or SETs form parameters to/from Object.
+ * Based on: http://javascriptmvc.com/docs.html#!jQuery.fn.formParams
  * @author Tom
  *
- * Based on: http://javascriptmvc.com/docs.html#!jQuery.fn.formParams
+ * GET:
+ *  @param {boolean} convert   if true - strings that represent numbers and booleans will be converted and empty string will not be added to the object.
+ *  @return {object}           object representing form fields with values
  *
+ * SET:
+ *  @param {object} params     object of names with values to apply to the form
+ *  @param {boolean} clear     if true - fields which values are undefined (in the passed object) will be cleared
+ *  @return {object}           jQuery object representing the form (for chaining)
  *
- * GETs or SETs form parameters to/from Object.
+ * @example
+ *  <form>
+ *    <input name="foo[bar]" value='2'/>
+ *    <input name="foo[ced]" value='4'/>
+ *  <form/>
  *
- * When GET and convert == true -> strings that represent numbers and booleans will be converted and empty string will not be added to the object.
- * When SET and convert == true -> fields which values are undefined (in the passed object) will be cleared
- *
- * Example html:
- * @codestart html
- * &lt;form>
- *   &lt;input name="foo[bar]" value='2'/>
- *   &lt;input name="foo[ced]" value='4'/>
- * &lt;form/>
- * @codeend
- *
- * Example code:
- *     $('form').formParams() //-> { foo:{bar:'2', ced: '4'} }
- *
- *
- * @param {Object} params If an object is passed, the form will be re-populated with the values of the object based on the name of the inputs within the form
- *
- * @param {Boolean} convert (false) True if strings that look like numbers and booleans should be converted and if empty string should not be added to the result. Defaults to false.
- *
- * @return {Object} An object of name-value pairs.
+ * $('form').formParams() //-> { foo:{bar:'2', ced: '4'} }
  */
 
 (function ($) {
@@ -47,10 +40,9 @@
 		formParams: function (params, convert) {
 			if (typeof params === 'boolean') { convert = params; params = null; }
 			if (params) return this.setParams(params, convert);																	// SET
-			else if (this[0].nodeName.toLowerCase() === 'form' && this[0].elements) {											// GET
+			else if (this[0].nodeName === 'FORM' && this[0].elements) {															// GET
 				return jQuery(jQuery.makeArray(this[0].elements)).getParams(convert);
 			}
-			//return jQuery("input[name], textarea[name], select[name]", this[0]).getParams(convert);
 		},
 
 
@@ -67,7 +59,7 @@
 				if (clear !== true && value === undefined) return;																// if clear==true and no value = clear field, otherwise - leave it as it was
 				if (value === null || value === undefined) value = '';															// if no value - clear field
 
-				value = decodeEntities(value);																					// decode html special chars (entities)
+				if (typeof value === 'string' && value.indexOf('&#x') > -1) value = decodeEntities(value);						// decode html special chars (entities)
 
 				if (this.type === 'radio') this.checked = (this.value == value);
 				else if (this.type === 'checkbox') this.checked = value;
@@ -81,6 +73,7 @@
 					}
 				}
 			});
+			return this;
 		},
 
 

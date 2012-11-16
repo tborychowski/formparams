@@ -1,0 +1,8 @@
+{
+    "framework": "jasmine",
+    "src_files": [
+        "jquery-1.8.0.min.js",
+        "jquery.formparams.js",
+		"testem-test.js"
+    ]
+}

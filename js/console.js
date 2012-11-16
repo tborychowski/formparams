@@ -1,4 +1,4 @@
-;(function($){
+(function ($) {
 	var con = $('<div id="console"/>'), subHandle, ready = false,
 
 	_cls = function(){
@@ -34,4 +34,4 @@
 		cls: _cls,
 		log: _log
 	};
-}(jQuery));
+})(jQuery);
