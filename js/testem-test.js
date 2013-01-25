@@ -9,15 +9,24 @@ var formHtml =
 	comparer1 = { name: 'Tom', surname: 'Smith', optin: false, gender: 'm', address: {line1: 'building', line2: '12', line3: '3' } },
 	comparer2 = { name: 'Tom', surname: 'Smith', optin: false, gender: 'm', address: {line1: 'building', line2: 12, line3: 3 } },
 	setter = { name: 'Adam', surname: 'Brown', optin: true, gender: 'm', address: {line1: 'house', line2: 10, line3: 123 } },
-	setter2 = { name: 'Dana', optin: false, gender: 'f' }
+	setter2 = { name: 'Dana', optin: false, gender: 'f' };
 
 
 describe('formparams - read:', function () {
 	var form = $('<form/>').html(formHtml);
 
-	it('Form Data is defined', function () { expect(form.formParams()).toBeDefined(); });
-	it('Read', function () { expect(form.formParams()).toEqual(comparer1); });
-	it('Read and convert', function () { expect(form.formParams(true)).toEqual(comparer2); });
+	it('Form Data is defined', function () {
+		expect(form.formParams()).toBeDefined();
+	});
+
+	it('Read', function () {
+		expect(form.formParams()).toEqual(comparer1);
+	});
+
+	it('Read and convert', function () {
+		expect(form.formParams(true)).toEqual(comparer2);
+	});
+
 });
 
 
@@ -83,7 +92,9 @@ describe('formparams - write:', function () {
 describe('formparams - write and read:', function () {
 	var form;
 
-	beforeEach(function () { form = $('<form/>').html(formHtml); });
+	beforeEach(function () {
+		form = $('<form/>').html(formHtml);
+	});
 
 	it('set and normal get', function () {
 		form.formParams(comparer1);

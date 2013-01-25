@@ -22,6 +22,8 @@
  */
 
 (function ($) {
+	'use strict';
+
 	var keyBreaker = /[^\[\]]+/g,
 		numberMatcher = /^[\-+]?[0-9]*\.?[0-9]+([eE][\-+]?[0-9]+)?$/,
 		isNumber = function (value) {
@@ -59,7 +61,7 @@
 				if (clear !== true && value === undefined) return;																// if clear==true and no value = clear field, otherwise - leave it as it was
 				if (value === null || value === undefined) value = '';															// if no value - clear field
 
-				if (typeof value === 'string' && value.indexOf('&#x') > -1) value = decodeEntities(value);						// decode html special chars (entities)
+				if (typeof value === 'string' && value.indexOf('&') > -1) value = decodeEntities(value);						// decode html special chars (entities)
 
 				if (this.type === 'radio') this.checked = (this.value == value);
 				else if (this.type === 'checkbox') this.checked = value;
@@ -83,7 +85,7 @@
 
 			this.each(function () {
 				var el = this, type = el.type && el.type.toLowerCase();
-				if ((type === 'submit') || !el.name)  return;																	// if we are submit, ignore
+				if ((type === 'submit') || !el.name || el.disabled)  return;													// if we are submit or disabled - ignore
 
 				var key = el.name, value = $.data(el, 'value') || $.fn.val.call([el]),
 					parts = key.match(keyBreaker), lastPart;																	// make an array of values
