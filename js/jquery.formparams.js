@@ -41,34 +41,51 @@
 	$.fn.extend({
 		formParams: function (params, convert) {
 			if (typeof params === 'boolean') { convert = params; params = null; }
-			if (params) return this.setParams(params, convert);																	// SET
-			else if (this[0].nodeName === 'FORM' && this[0].elements) {															// GET
+			if (params) return this.setParams(params, convert);												// SET
+			else if (this[0].nodeName === 'FORM' && this[0].elements) {										// GET
 				return jQuery(jQuery.makeArray(this[0].elements)).getParams(convert);
 			}
 		},
 
 
-		setParams: function (params, clear) {																					/*jshint eqeqeq: false*/
-			this.find('[name]').each(function () {																				// Find all the inputs
-				var name = $(this).attr('name'), value = params[name];
+		setParams: function (params, clear) {
+			/*jshint eqeqeq: false*/
 
-				if (name.indexOf('[') > -1) {																					// if name is object, e.g. user[name], userData[address][street], update value to read this correctly
-					var names = name.replace(/\]/g, '').split('['), i = 0, n = null, v = params;
-					for (; n = names[i++] ;) if (v[n]) v = v[n]; else { v = undefined; break; }
+			// Find all the inputs
+			this.find('[name]').each(function () {
+				var name = $(this).attr('name'),
+					value = params[name],
+					names, i, n, v, el;
+
+				// if name is object, e.g. user[name], userData[address][street], update value to read this correctly
+				if (name.indexOf('[') > -1) {
+					names = name.replace(/\]/g, '').split('[');
+					n = null;
+					v = params;
+					for (i = 0; n = names[i++] ;) {
+						if (v[n]) v = v[n];
+						else { v = undefined; break; }
+					}
 					value = v;
 				}
 
-				if (clear !== true && value === undefined) return;																// if clear==true and no value = clear field, otherwise - leave it as it was
-				if (value === null || value === undefined) value = '';															// if no value - clear field
+				// if clear==true and no value = clear field, otherwise - leave it as it was
+				if (clear !== true && value === undefined) return;
 
-				if (typeof value === 'string' && value.indexOf('&') > -1) value = decodeEntities(value);						// decode html special chars (entities)
+				// if no value - clear field
+				if (value === null || value === undefined) value = '';
+
+				// decode html special chars (entities)
+				if (typeof value === 'string' && value.indexOf('&') > -1) value = decodeEntities(value);
 
 				if (this.type === 'radio') this.checked = (this.value == value);
 				else if (this.type === 'checkbox') this.checked = value;
 				else {
-					if ('placeholder' in document.createElement('input')) this.value = value;									// normal browser
-					else {																										// manually handle placeholders for specIEl browser
-						var el = $(this);
+					// normal browser
+					if ('placeholder' in document.createElement('input')) this.value = value;
+					else {
+						// manually handle placeholders for specIEl browser
+						el = $(this);
 						if (this.value != value && value !== '') el.data('changed', true);
 						if (value === '') el.data('changed', false).val(el.attr('placeholder'));
 						else this.value = value;
@@ -80,26 +97,39 @@
 
 
 		getParams: function (convert) {
-			var data = {}, current;
+			var data = {}, current, i;
 			convert = (convert === undefined ? false : convert);
 
 			this.each(function () {
-				var el = this, type = el.type && el.type.toLowerCase();
-				if ((type === 'submit') || !el.name || el.disabled)  return;													// if we are submit or disabled - ignore
+				var el = this,
+					$el = $(el),
+					type = el.type && el.type.toLowerCase(),
+					key, value, parts, lastPart, tv, cmp;
 
-				var key = el.name, value = $.data(el, 'value') || $.fn.val.call([el]),
-					parts = key.match(keyBreaker), lastPart;																	// make an array of values
+				// if we are submit or disabled - ignore
+				if ((type === 'submit') || !el.name || el.disabled)  return;
 
-				if (el.type === 'radio' && !el.checked) return;																	// return only "checked" radio value
-				if (el.type === 'checkbox') value = el.checked;																	// convert chekbox to [true | false]
+				key = el.name;
+				value = $.data(el, 'value') || $.fn.val.call([el]);
+				parts = key.match(keyBreaker);
 
-				var $el = $(el);
-				if ($el.data('changed') !== true && value === $el.attr('placeholder')) value = '';								// clear placeholder valus for IEs
+				// return only "checked" radio value
+				if (el.type === 'radio' && !el.checked) return;
+
+				// convert chekbox to [true | false]
+				if (el.type === 'checkbox') value = el.checked;
+
+
+				// clear placeholder valus for IEs
+				if ($el.data('changed') !== true && value === $el.attr('placeholder')) value = '';
 
 				if (convert) {
 					if (isNumber(value)) {
-						var tv = parseFloat(value), cmp = tv + '';
-						if (value.indexOf('.') > 0) cmp = tv.toFixed(value.split('.')[1].length);								// convert (string)100.00 to (int)100
+						tv = parseFloat(value);
+						cmp = tv + '';
+
+						// convert (string)100.00 to (int)100
+						if (value.indexOf('.') > 0) cmp = tv.toFixed(value.split('.')[1].length);
 						if (cmp === value) value = tv;
 					}
 					else if (value === 'true') value = true;
@@ -108,13 +138,15 @@
 				}
 
 				current = data;
-				for (var i = 0; i < parts.length - 1; i++) {																	// go through and create nested objects
+				// go through and create nested objects
+				for (i = 0; i < parts.length - 1; i++) {
 					if (!current[parts[i]]) current[parts[i]] = {};
 					current = current[parts[i]];
 				}
 				lastPart = parts[parts.length - 1];
 
-				if (current[lastPart]) {																						// now we are on the last part, set the value
+				// now we are on the last part, set the value
+				if (current[lastPart]) {
 					if (!$.isArray(current[lastPart])) {
 						current[lastPart] = current[lastPart] === undefined ? [] : [current[lastPart]];
 					}
