@@ -4,7 +4,8 @@
  * @author Tom
  *
  * GET:
- *  @param {boolean} convert   if true - strings that represent numbers and booleans will be converted and empty string will not be added to the object.
+ *  @param {boolean} convert   if true - strings that represent numbers and booleans will be converted and empty
+ *                             string will not be added to the object.
  *  @return {object}           object representing form fields with values
  *
  * SET:
