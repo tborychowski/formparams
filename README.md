@@ -18,20 +18,20 @@ jQuery plugin to GET or SET form fields to/from JS object.
     $(function(){
 		// GET form fields to object
         var formObj = $('#testForm').formParams();
-		
+
 		// GET form fields to object and convert types ('123' to 123, 'true' to true)
         var formObj = $('#testForm').formParams(true);
 
-		
-		
+
+
 		// SET form fields from object
 		// (form fields that do not have the corresponding value in the object are left unchanged):
 		$('#testForm').formParams(formObj);
 
-		// SET form fields from object 
+		// SET form fields from object
 		// and clear form fields that don't have the corresponding value in the object
 		$('#testForm').formParams(formObj, true);
 	});
-	
 
-Demo page available soon (download and open index.html)
+
+Demo included (just open index.html)
