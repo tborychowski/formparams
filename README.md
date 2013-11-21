@@ -3,6 +3,9 @@ FormParams
 
 jQuery plugin to GET or SET form fields to/from JS object.
 
+### Installation
+    bower install form-params
+
 ### Basic usage
 	<form id="testForm">
 		<input name="name" placeholder="name" value="tom"/>
