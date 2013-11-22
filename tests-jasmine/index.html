@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Jasmine Spec Runner</title>
+	<link rel="shortcut icon" type="image/png" href="lib/jasmine_favicon.png">
+	<link rel="stylesheet" href="lib/jasmine.css">
+</head>
+<body>
+
+	<script type="text/javascript" src="lib/jasmine.js"></script>
+	<script type="text/javascript" src="lib/jasmine-html.js"></script>
+	<script type="text/javascript" src="lib/jasmine-ext.js"></script>
+
+	<!-- include source files here... -->
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/jquery.formparams.js"></script>
+
+	<!-- include spec files here... -->
+	<script src="spec/formparams-test.js"></script>
+
+	<script type="text/javascript">
+	(function() {
+		var jasmineEnv = jasmine.getEnv();
+		jasmineEnv.updateInterval = 1000;
+		var htmlReporter = new jasmine.HtmlReporter();
+		jasmineEnv.addReporter(htmlReporter);
+		jasmineEnv.specFilter = function(spec) { return htmlReporter.specFilter(spec); };
+		var currentWindowOnload = window.onload;
+		window.onload = function() {
+			if (currentWindowOnload) currentWindowOnload();
+			execJasmine();
+		};
+		function execJasmine() { jasmineEnv.execute(); }
+	})();
+	</script>
+</body>
+</html>
