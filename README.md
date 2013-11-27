@@ -6,6 +6,8 @@ jQuery plugin to GET or SET form fields to/from JS object.
     bower install form-params
 
 ### Basic usage
+
+```html
 	<form id="testForm">
 		<input name="name" placeholder="name" value="tom"/>
 		<input name="surname" placeholder="surname" value="B"/>
@@ -15,8 +17,10 @@ jQuery plugin to GET or SET form fields to/from JS object.
 		<input name="address[line2]" placeholder="address line 2" value=""/>
 		<input name="address[line3]" placeholder="address line 3" value=""/>
 	</form>
+```
 
 
+```javascript
     $(function(){
 		// GET form fields to object
         var formObj = $('#testForm').formParams();
@@ -34,6 +38,6 @@ jQuery plugin to GET or SET form fields to/from JS object.
 		// and clear form fields that don't have the corresponding value in the object
 		$('#testForm').formParams(formObj, true);
 	});
-
+```
 
 Demo included (just open index.html)
