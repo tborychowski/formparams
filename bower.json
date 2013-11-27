@@ -1,11 +1,11 @@
 {
 	"name": "form-params",
 	"description": "Read and write form fields to and from JavaScript object",
-	"version": "2.0.0",
+	"version": "2.1.0",
 	"authors": [
 		"Tom <tborychowski@gmail.com>"
 	],
 	"license": "MIT",
 	"ignore": [ "**/.*", "node_modules", "bower_components" ],
-	"main": [ "js/jquery.formparams.js" ]
+	"main": [ "src/jquery.formparams.js" ]
 }

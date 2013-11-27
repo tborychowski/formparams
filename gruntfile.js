@@ -1,25 +1,19 @@
 /*global module:false*/
 module.exports = function (grunt) {
 	grunt.initConfig({
-
-		jasmine: {
-			files: {
-				src: 'js/jquery.formparams.js',
-				options: {
-					vendor: 'js/jquery.min.js',
-					helpers: 'tests-jasmine/lib/jasmine-ext.js',
-					specs: 'tests-jasmine/spec/*.js'
-				}
-			}
+		jshint: {
+			options: { jshintrc: 'src/.jshintrc' },
+			files: [ 'src/*.js' ]
 		},
-
-		qunit: { files: ['tests-qunit/*.html'] }
-
-
+		uglify: { 
+			jsh : { files: { 'dist/jquery.formparams.min.js': 'src/jquery.formparams.js' }}
+		},
+		qunit: { files: ['test/*.html'] }
 	});
 
+	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-qunit');
-	grunt.loadNpmTasks('grunt-contrib-jasmine');
 
-	grunt.registerTask('default', [ 'qunit', 'jasmine' ]);
+	grunt.registerTask('default', [ 'qunit' ]);
 };

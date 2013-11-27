@@ -1,5 +1,4 @@
-FormParams
-==========
+# FormParams [![Build Status](https://drone.io/github.com/tborychowski/formparams/status.png)](https://drone.io/github.com/tborychowski/formparams/latest)
 
 jQuery plugin to GET or SET form fields to/from JS object.
 
