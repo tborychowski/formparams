@@ -3,14 +3,15 @@
 test('formparams', function () {
 	var formHtml =
 		'<input name="name" placeholder="name" value="Tom"/>' +
-		'<input name="surname" placeholder="surname" value="Smith"/>' +
+		'<input name="surname" placeholder="surname" value="O&apos;Don"/>' +
 		'<input type="checkbox" name="optin" />Opt-In<br>' +
 		'<input type="radio" name="gender" value="m" checked="checked" />M <input type="radio" name="gender" value="f" />F<br>' +
 		'<input name="address[line1]" placeholder="address line 1" value="building"/>' +
 		'<input name="address[line2]" placeholder="address line 2" value="12"/>' +
 		'<input name="address[line3]" placeholder="address line 3" value="3"/>',
-	comparer1 = { name: 'Tom', surname: 'Smith', optin: false, gender: 'm', address: {line1: 'building', line2: '12', line3: '3' } },
-	comparer2 = { name: 'Tom', surname: 'Smith', optin: false, gender: 'm', address: {line1: 'building', line2: 12, line3: 3 } },
+	comparer1 = { name: 'Tom', surname: 'O\'Don', optin: false, gender: 'm', address: {line1: 'building', line2: '12', line3: '3' } },
+	comparer1a = { name: 'Tom', surname: 'O&apos;Don', optin: false, gender: 'm', address: {line1: 'building', line2: '12', line3: '3' } },
+	comparer2 = { name: 'Tom', surname: 'O\'Don', optin: false, gender: 'm', address: {line1: 'building', line2: 12, line3: 3 } },
 	setter = { name: 'Adam', surname: 'Brown', optin: true, gender: 'm', address: {line1: 'house', line2: 10, line3: 123 } },
 	setter2 = { name: 'Dana', optin: false, gender: 'f' },
 	form = $('<form/>').html(formHtml),
@@ -79,6 +80,9 @@ test('formparams', function () {
 
 	/*** SET & GET ****************************************************************************************************/
 	form.formParams(comparer1);
+	deepEqual(form.formParams(), comparer1, 'set and normal get');
+
+	form.formParams(comparer1a);
 	deepEqual(form.formParams(), comparer1, 'set and normal get');
 
 	form.formParams(comparer1);
