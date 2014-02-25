@@ -1,0 +1,204 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'publish' ]
+2 info using npm@1.3.24
+3 info using node@v0.10.25
+4 verbose node symlink C:\Program Files\nodejs\\node.exe
+5 verbose publish [ '.' ]
+6 verbose cache add [ '.', null ]
+7 verbose cache add name=undefined spec="." args=[".",null]
+8 verbose parsed url { protocol: null,
+8 verbose parsed url   slashes: null,
+8 verbose parsed url   auth: null,
+8 verbose parsed url   host: null,
+8 verbose parsed url   port: null,
+8 verbose parsed url   hostname: null,
+8 verbose parsed url   hash: null,
+8 verbose parsed url   search: null,
+8 verbose parsed url   query: null,
+8 verbose parsed url   pathname: '.',
+8 verbose parsed url   path: '.',
+8 verbose parsed url   href: '.' }
+9 silly lockFile 3a52ce78- .
+10 verbose lock . C:\Users\Tom\AppData\Roaming\npm-cache\3a52ce78-.lock
+11 verbose tar pack [ 'C:\\Users\\Tom\\AppData\\Local\\Temp\\npm-5428-V2w4G77P\\1393342054560-0.11512833274900913\\tmp.tgz',
+11 verbose tar pack   '.' ]
+12 verbose tarball C:\Users\Tom\AppData\Local\Temp\npm-5428-V2w4G77P\1393342054560-0.11512833274900913\tmp.tgz
+13 verbose folder .
+14 info prepublish form-params@2.1.0
+15 silly lockFile 1f1177db-tar tar://.
+16 verbose lock tar://. C:\Users\Tom\AppData\Roaming\npm-cache\1f1177db-tar.lock
+17 silly lockFile bd3c9847-4560-0-11512833274900913-tmp-tgz tar://C:\Users\Tom\AppData\Local\Temp\npm-5428-V2w4G77P\1393342054560-0.11512833274900913\tmp.tgz
+18 verbose lock tar://C:\Users\Tom\AppData\Local\Temp\npm-5428-V2w4G77P\1393342054560-0.11512833274900913\tmp.tgz C:\Users\Tom\AppData\Roaming\npm-cache\bd3c9847-4560-0-11512833274900913-tmp-tgz.lock
+19 silly lockFile 1f1177db-tar tar://.
+20 silly lockFile 1f1177db-tar tar://.
+21 silly lockFile bd3c9847-4560-0-11512833274900913-tmp-tgz tar://C:\Users\Tom\AppData\Local\Temp\npm-5428-V2w4G77P\1393342054560-0.11512833274900913\tmp.tgz
+22 silly lockFile bd3c9847-4560-0-11512833274900913-tmp-tgz tar://C:\Users\Tom\AppData\Local\Temp\npm-5428-V2w4G77P\1393342054560-0.11512833274900913\tmp.tgz
+23 verbose tar unpack C:\Users\Tom\AppData\Local\Temp\npm-5428-V2w4G77P\1393342054560-0.11512833274900913\tmp.tgz
+24 silly lockFile df5ee2c3-4560-0-11512833274900913-package tar://C:\Users\Tom\AppData\Local\Temp\npm-5428-V2w4G77P\1393342054560-0.11512833274900913\package
+25 verbose lock tar://C:\Users\Tom\AppData\Local\Temp\npm-5428-V2w4G77P\1393342054560-0.11512833274900913\package C:\Users\Tom\AppData\Roaming\npm-cache\df5ee2c3-4560-0-11512833274900913-package.lock
+26 silly lockFile bd3c9847-4560-0-11512833274900913-tmp-tgz tar://C:\Users\Tom\AppData\Local\Temp\npm-5428-V2w4G77P\1393342054560-0.11512833274900913\tmp.tgz
+27 verbose lock tar://C:\Users\Tom\AppData\Local\Temp\npm-5428-V2w4G77P\1393342054560-0.11512833274900913\tmp.tgz C:\Users\Tom\AppData\Roaming\npm-cache\bd3c9847-4560-0-11512833274900913-tmp-tgz.lock
+28 silly gunzTarPerm modes [ '755', '644' ]
+29 silly gunzTarPerm extractEntry package.json
+30 silly gunzTarPerm modified mode [ 'package.json', 438, 420 ]
+31 silly gunzTarPerm extractEntry .npmignore
+32 silly gunzTarPerm modified mode [ '.npmignore', 438, 420 ]
+33 silly gunzTarPerm extractEntry README.md
+34 silly gunzTarPerm modified mode [ 'README.md', 438, 420 ]
+35 silly gunzTarPerm extractEntry gruntfile.js
+36 silly gunzTarPerm modified mode [ 'gruntfile.js', 438, 420 ]
+37 silly gunzTarPerm extractEntry index.html
+38 silly gunzTarPerm modified mode [ 'index.html', 438, 420 ]
+39 silly gunzTarPerm extractEntry bower.json
+40 silly gunzTarPerm modified mode [ 'bower.json', 438, 420 ]
+41 silly gunzTarPerm extractEntry src/jquery.formparams.js
+42 silly gunzTarPerm modified mode [ 'src/jquery.formparams.js', 438, 420 ]
+43 silly gunzTarPerm extractEntry src/.jshintrc
+44 silly gunzTarPerm modified mode [ 'src/.jshintrc', 438, 420 ]
+45 silly gunzTarPerm extractEntry dist/jquery.formparams.min.js
+46 silly gunzTarPerm modified mode [ 'dist/jquery.formparams.min.js', 438, 420 ]
+47 silly gunzTarPerm extractEntry test/formparams-test.js
+48 silly gunzTarPerm modified mode [ 'test/formparams-test.js', 438, 420 ]
+49 silly gunzTarPerm extractEntry test/index.html
+50 silly gunzTarPerm modified mode [ 'test/index.html', 438, 420 ]
+51 silly gunzTarPerm extractEntry test/lib/blanket.min.js
+52 silly gunzTarPerm modified mode [ 'test/lib/blanket.min.js', 438, 420 ]
+53 silly gunzTarPerm extractEntry test/lib/grunt-reporter.js
+54 silly gunzTarPerm modified mode [ 'test/lib/grunt-reporter.js', 438, 420 ]
+55 silly gunzTarPerm extractEntry test/lib/qunit.js
+56 silly gunzTarPerm modified mode [ 'test/lib/qunit.js', 438, 420 ]
+57 silly gunzTarPerm extractEntry test/lib/qunit.css
+58 silly gunzTarPerm modified mode [ 'test/lib/qunit.css', 438, 420 ]
+59 silly gunzTarPerm extractEntry lib/console.js
+60 silly gunzTarPerm modified mode [ 'lib/console.js', 438, 420 ]
+61 silly gunzTarPerm extractEntry lib/demo.js
+62 silly gunzTarPerm modified mode [ 'lib/demo.js', 438, 420 ]
+63 silly gunzTarPerm extractEntry lib/jquery.min.js
+64 silly gunzTarPerm modified mode [ 'lib/jquery.min.js', 438, 420 ]
+65 silly gunzTarPerm extractEntry lib/jquery.pubsub.js
+66 silly gunzTarPerm modified mode [ 'lib/jquery.pubsub.js', 438, 420 ]
+67 silly lockFile df5ee2c3-4560-0-11512833274900913-package tar://C:\Users\Tom\AppData\Local\Temp\npm-5428-V2w4G77P\1393342054560-0.11512833274900913\package
+68 silly lockFile df5ee2c3-4560-0-11512833274900913-package tar://C:\Users\Tom\AppData\Local\Temp\npm-5428-V2w4G77P\1393342054560-0.11512833274900913\package
+69 silly lockFile bd3c9847-4560-0-11512833274900913-tmp-tgz tar://C:\Users\Tom\AppData\Local\Temp\npm-5428-V2w4G77P\1393342054560-0.11512833274900913\tmp.tgz
+70 silly lockFile bd3c9847-4560-0-11512833274900913-tmp-tgz tar://C:\Users\Tom\AppData\Local\Temp\npm-5428-V2w4G77P\1393342054560-0.11512833274900913\tmp.tgz
+71 verbose tar pack [ 'C:\\Users\\Tom\\AppData\\Roaming\\npm-cache\\form-params\\2.1.0\\package.tgz',
+71 verbose tar pack   'C:\\Users\\Tom\\AppData\\Local\\Temp\\npm-5428-V2w4G77P\\1393342054560-0.11512833274900913\\package' ]
+72 verbose tarball C:\Users\Tom\AppData\Roaming\npm-cache\form-params\2.1.0\package.tgz
+73 verbose folder C:\Users\Tom\AppData\Local\Temp\npm-5428-V2w4G77P\1393342054560-0.11512833274900913\package
+74 silly lockFile df5ee2c3-4560-0-11512833274900913-package tar://C:\Users\Tom\AppData\Local\Temp\npm-5428-V2w4G77P\1393342054560-0.11512833274900913\package
+75 verbose lock tar://C:\Users\Tom\AppData\Local\Temp\npm-5428-V2w4G77P\1393342054560-0.11512833274900913\package C:\Users\Tom\AppData\Roaming\npm-cache\df5ee2c3-4560-0-11512833274900913-package.lock
+76 silly lockFile 546c9980-he-form-params-2-1-0-package-tgz tar://C:\Users\Tom\AppData\Roaming\npm-cache\form-params\2.1.0\package.tgz
+77 verbose lock tar://C:\Users\Tom\AppData\Roaming\npm-cache\form-params\2.1.0\package.tgz C:\Users\Tom\AppData\Roaming\npm-cache\546c9980-he-form-params-2-1-0-package-tgz.lock
+78 silly lockFile df5ee2c3-4560-0-11512833274900913-package tar://C:\Users\Tom\AppData\Local\Temp\npm-5428-V2w4G77P\1393342054560-0.11512833274900913\package
+79 silly lockFile df5ee2c3-4560-0-11512833274900913-package tar://C:\Users\Tom\AppData\Local\Temp\npm-5428-V2w4G77P\1393342054560-0.11512833274900913\package
+80 silly lockFile 546c9980-he-form-params-2-1-0-package-tgz tar://C:\Users\Tom\AppData\Roaming\npm-cache\form-params\2.1.0\package.tgz
+81 silly lockFile 546c9980-he-form-params-2-1-0-package-tgz tar://C:\Users\Tom\AppData\Roaming\npm-cache\form-params\2.1.0\package.tgz
+82 silly lockFile 91381b3b--cache-form-params-2-1-0-package C:\Users\Tom\AppData\Roaming\npm-cache\form-params\2.1.0\package
+83 verbose lock C:\Users\Tom\AppData\Roaming\npm-cache\form-params\2.1.0\package C:\Users\Tom\AppData\Roaming\npm-cache\91381b3b--cache-form-params-2-1-0-package.lock
+84 silly lockFile 91381b3b--cache-form-params-2-1-0-package C:\Users\Tom\AppData\Roaming\npm-cache\form-params\2.1.0\package
+85 silly lockFile 91381b3b--cache-form-params-2-1-0-package C:\Users\Tom\AppData\Roaming\npm-cache\form-params\2.1.0\package
+86 verbose tar unpack C:\Users\Tom\AppData\Roaming\npm-cache\form-params\2.1.0\package.tgz
+87 silly lockFile 185c4c37--cache-form-params-2-1-0-package tar://C:\Users\Tom\AppData\Roaming\npm-cache\form-params\2.1.0\package
+88 verbose lock tar://C:\Users\Tom\AppData\Roaming\npm-cache\form-params\2.1.0\package C:\Users\Tom\AppData\Roaming\npm-cache\185c4c37--cache-form-params-2-1-0-package.lock
+89 silly lockFile 546c9980-he-form-params-2-1-0-package-tgz tar://C:\Users\Tom\AppData\Roaming\npm-cache\form-params\2.1.0\package.tgz
+90 verbose lock tar://C:\Users\Tom\AppData\Roaming\npm-cache\form-params\2.1.0\package.tgz C:\Users\Tom\AppData\Roaming\npm-cache\546c9980-he-form-params-2-1-0-package-tgz.lock
+91 silly gunzTarPerm modes [ '755', '644' ]
+92 silly gunzTarPerm extractEntry package.json
+93 silly gunzTarPerm modified mode [ 'package.json', 438, 420 ]
+94 silly gunzTarPerm extractEntry .npmignore
+95 silly gunzTarPerm modified mode [ '.npmignore', 438, 420 ]
+96 silly gunzTarPerm extractEntry README.md
+97 silly gunzTarPerm modified mode [ 'README.md', 438, 420 ]
+98 silly gunzTarPerm extractEntry gruntfile.js
+99 silly gunzTarPerm modified mode [ 'gruntfile.js', 438, 420 ]
+100 silly gunzTarPerm extractEntry bower.json
+101 silly gunzTarPerm modified mode [ 'bower.json', 438, 420 ]
+102 silly gunzTarPerm extractEntry dist/jquery.formparams.min.js
+103 silly gunzTarPerm modified mode [ 'dist/jquery.formparams.min.js', 438, 420 ]
+104 silly gunzTarPerm extractEntry index.html
+105 silly gunzTarPerm modified mode [ 'index.html', 438, 420 ]
+106 silly gunzTarPerm extractEntry lib/console.js
+107 silly gunzTarPerm modified mode [ 'lib/console.js', 438, 420 ]
+108 silly gunzTarPerm extractEntry lib/demo.js
+109 silly gunzTarPerm modified mode [ 'lib/demo.js', 438, 420 ]
+110 silly gunzTarPerm extractEntry lib/jquery.min.js
+111 silly gunzTarPerm modified mode [ 'lib/jquery.min.js', 438, 420 ]
+112 silly gunzTarPerm extractEntry lib/jquery.pubsub.js
+113 silly gunzTarPerm modified mode [ 'lib/jquery.pubsub.js', 438, 420 ]
+114 silly gunzTarPerm extractEntry src/jquery.formparams.js
+115 silly gunzTarPerm modified mode [ 'src/jquery.formparams.js', 438, 420 ]
+116 silly gunzTarPerm extractEntry src/.jshintrc
+117 silly gunzTarPerm modified mode [ 'src/.jshintrc', 438, 420 ]
+118 silly gunzTarPerm extractEntry test/formparams-test.js
+119 silly gunzTarPerm modified mode [ 'test/formparams-test.js', 438, 420 ]
+120 silly gunzTarPerm extractEntry test/index.html
+121 silly gunzTarPerm modified mode [ 'test/index.html', 438, 420 ]
+122 silly gunzTarPerm extractEntry test/lib/blanket.min.js
+123 silly gunzTarPerm modified mode [ 'test/lib/blanket.min.js', 438, 420 ]
+124 silly gunzTarPerm extractEntry test/lib/grunt-reporter.js
+125 silly gunzTarPerm modified mode [ 'test/lib/grunt-reporter.js', 438, 420 ]
+126 silly gunzTarPerm extractEntry test/lib/qunit.js
+127 silly gunzTarPerm modified mode [ 'test/lib/qunit.js', 438, 420 ]
+128 silly gunzTarPerm extractEntry test/lib/qunit.css
+129 silly gunzTarPerm modified mode [ 'test/lib/qunit.css', 438, 420 ]
+130 silly lockFile 185c4c37--cache-form-params-2-1-0-package tar://C:\Users\Tom\AppData\Roaming\npm-cache\form-params\2.1.0\package
+131 silly lockFile 185c4c37--cache-form-params-2-1-0-package tar://C:\Users\Tom\AppData\Roaming\npm-cache\form-params\2.1.0\package
+132 silly lockFile 546c9980-he-form-params-2-1-0-package-tgz tar://C:\Users\Tom\AppData\Roaming\npm-cache\form-params\2.1.0\package.tgz
+133 silly lockFile 546c9980-he-form-params-2-1-0-package-tgz tar://C:\Users\Tom\AppData\Roaming\npm-cache\form-params\2.1.0\package.tgz
+134 verbose chmod C:\Users\Tom\AppData\Roaming\npm-cache\form-params\2.1.0\package.tgz 644
+135 silly chown skipping for windows C:\Users\Tom\AppData\Roaming\npm-cache\form-params\2.1.0\package.tgz
+136 silly lockFile 3a52ce78- .
+137 silly lockFile 3a52ce78- .
+138 silly publish { name: 'form-params',
+138 silly publish   description: 'Read and write form fields to and from JavaScript object',
+138 silly publish   version: '2.1.0',
+138 silly publish   repository:
+138 silly publish    { type: 'git',
+138 silly publish      url: 'https://github.com/tborychowski/formparams.git' },
+138 silly publish   scripts: { test: 'grunt qunit' },
+138 silly publish   devDependencies:
+138 silly publish    { grunt: '~0.4.2',
+138 silly publish      'grunt-contrib-jshint': '~0.8.0',
+138 silly publish      'grunt-contrib-uglify': '~0.3.1',
+138 silly publish      'grunt-contrib-qunit': '~0.4.0',
+138 silly publish      'grunt-cli': '~0.1.11' },
+138 silly publish   readme: '# FormParams\n[![NPM version](https://badge.fury.io/js/form-params.png)](http://badge.fury.io/js/form-params) [![Build Status](https://drone.io/github.com/tborychowski/formparams/status.png)](https://drone.io/github.com/tborychowski/formparams/latest) [![devDependency Status](https://david-dm.org/tborychowski/formparams/dev-status.png)](https://david-dm.org/tborychowski/formparams#info=devDependencies) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)\n\njQuery plugin to GET or SET form fields to/from JS object.\n\n### Installation\n    bower install form-params\n\n### Basic usage\n\n```html\n<form id="testForm">\n\t<input name="name" placeholder="name" value="tom"/>\n\t<input name="surname" placeholder="surname" value="B"/>\n\t<input type="checkbox" name="optin" />Opt-In<br>\n\t<input type="radio" name="gender" value="m" />M <input type="radio" name="gender" value="f" />F<br>\n\t<input name="address[line1]" placeholder="address line 1" value=""/>\n\t<input name="address[line2]" placeholder="address line 2" value=""/>\n\t<input name="address[line3]" placeholder="address line 3" value=""/>\n</form>\n```\n\n\n```javascript\n$(function(){\n\t// GET form fields to object\n\tvar formObj = $(\'#testForm\').formParams();\n\n\t// GET form fields to object and convert types (\'123\' to 123, \'true\' to true)\n\tvar formObj = $(\'#testForm\').formParams(true);\n\n\n\t// SET form fields from object\n\t// (form fields that do not have the corresponding value in the object are left unchanged):\n\t$(\'#testForm\').formParams(formObj);\n\n\t// SET form fields from object\n\t// and clear form fields that don\'t have the corresponding value in the object\n\t$(\'#testForm\').formParams(formObj, true);\n});\n```\n\nDemo included (just open index.html)\n',
+138 silly publish   readmeFilename: 'README.md',
+138 silly publish   bugs: { url: 'https://github.com/tborychowski/formparams/issues' },
+138 silly publish   homepage: 'https://github.com/tborychowski/formparams',
+138 silly publish   _id: 'form-params@2.1.0',
+138 silly publish   dist: { shasum: '2a8e55e64abfada1301bc11e0e5fa348223642b3' },
+138 silly publish   _from: '.' }
+139 verbose url raw form-params
+140 verbose url resolving [ 'https://registry.npmjs.org/', './form-params' ]
+141 verbose url resolved https://registry.npmjs.org/form-params
+142 info trying registry request attempt 1 at 15:27:34
+143 http PUT https://registry.npmjs.org/form-params
+144 http 403 https://registry.npmjs.org/form-params
+145 info trying registry request attempt 1 at 15:27:35
+146 http PUT https://registry.npmjs.org/form-params
+147 http 403 https://registry.npmjs.org/form-params
+148 error publish Failed PUT 403
+149 error Error: forbidden cannot modify pre-existing version: 2.1.0
+149 error old={"name":"form-params","description":"Read and write form fields to and from JavaScript object","version":"2.1.0","repository":{"type":"git","url":"https://github.com/tborychowski/formparams.git"},"scripts":{"test":"grunt qunit"},"devDependencies":{"grunt":"~0.4.2","grunt-contrib-jshint":"~0.8.0","grunt-contrib-uglify":"~0.3.1","grunt-contrib-qunit":"~0.4.0","grunt-cli":"~0.1.11"},"bugs":{"url":"https://github.com/tborychowski/formparams/issues"},"homepage":"https://github.com/tborychowski/formparams","_id":"form-params@2.1.0","dist":{"shasum":"39de4e59cf03766196f3556e8e455edaa3e2afe6","tarball":"http://registry.npmjs.org/form-params/-/form-params-2.1.0.tgz"},"_from":".","_npmVersion":"1.3.24","_npmUser":{"name":"tborychowski","email":"tborychowski@gmail.com"},"maintainers":[{"name":"tborychowski","email":"tborychowski@gmail.com"}]}
+149 error new={"name":"form-params","description":"Read and write form fields to and from JavaScript object","version":"2.1.0","repository":{"type":"git","url":"https://github.com/tborychowski/formparams.git"},"scripts":{"test":"grunt qunit"},"devDependencies":{"grunt":"~0.4.2","grunt-contrib-jshint":"~0.8.0","grunt-contrib-uglify":"~0.3.1","grunt-contrib-qunit":"~0.4.0","grunt-cli":"~0.1.11"},"readme":"# FormParams\u000a[![NPM version](https://badge.fury.io/js/form-params.png)](http://badge.fury.io/js/form-params) [![Build Status](https://drone.io/github.com/tborychowski/formparams/status.png)](https://drone.io/github.com/tborychowski/formparams/latest) [![devDependency Status](https://david-dm.org/tborychowski/formparams/dev-status.png)](https://david-dm.org/tborychowski/formparams#info=devDependencies) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)\u000a\u000ajQuery plugin to GET or SET form fields to/from JS object.\u000a\u000a### Installation\u000a    bower install form-params\u000a\u000a### Basic usage\u000a\u000a```html\u000a<form id=\"testForm\">\u000a\u0009<input name=\"name\" placeholder=\"name\" value=\"tom\"/>\u000a\u0009<input name=\"surname\" placeholder=\"surname\" value=\"B\"/>\u000a\u0009<input type=\"checkbox\" name=\"optin\" />Opt-In<br>\u000a\u0009<input type=\"radio\" name=\"gender\" value=\"m\" />M <input type=\"radio\" name=\"gender\" value=\"f\" />F<br>\u000a\u0009<input name=\"address[line1]\" placeholder=\"address line 1\" value=\"\"/>\u000a\u0009<input name=\"address[line2]\" placeholder=\"address line 2\" value=\"\"/>\u000a\u0009<input name=\"address[line3]\" placeholder=\"address line 3\" value=\"\"/>\u000a</form>\u000a```\u000a\u000a\u000a```javascript\u000a$(function(){\u000a\u0009// GET form fields to object\u000a\u0009var formObj = $('#testForm').formParams();\u000a\u000a\u0009// GET form fields to object and convert types ('123' to 123, 'true' to true)\u000a\u0009var formObj = $('#testForm').formParams(true);\u000a\u000a\u000a\u0009// SET form fields from object\u000a\u0009// (form fields that do not have the corresponding value in the object are left unchanged):\u000a\u0009$('#testForm').formParams(formObj);\u000a\u000a\u0009// SET form fields from object\u000a\u0009// and clear form fields that don't have the corresponding value in the object\u000a\u0009$('#testForm').formParams(formObj, true);\u000a});\u000a```\u000a\u000aDemo included (just open index.html)\u000a","readmeFilename":"README.md","bugs":{"url":"https://github.com/tborychowski/formparams/issues"},"homepage":"https://github.com/tborychowski/formparams","_id":"form-params@2.1.0","dist":{"shasum":"2a8e55e64abfada1301bc11e0e5fa348223642b3","tarball":"http://registry.npmjs.org/form-params/-/form-params-2.1.0.tgz"},"_from":".","_npmVersion":"1.3.24","_npmUser":{"name":"tborychowski","email":"tborychowski@gmail.com"},"maintainers":[{"name":"tborychowski","email":"tborychowski@gmail.com"}]}: form-params
+149 error     at RegClient.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:275:14)
+149 error     at Request.self.callback (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:123:22)
+149 error     at Request.EventEmitter.emit (events.js:98:17)
+149 error     at Request.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:893:14)
+149 error     at Request.EventEmitter.emit (events.js:117:20)
+149 error     at IncomingMessage.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:844:12)
+149 error     at IncomingMessage.EventEmitter.emit (events.js:117:20)
+149 error     at _stream_readable.js:920:16
+149 error     at process._tickCallback (node.js:415:13)
+150 error If you need help, you may report this *entire* log,
+150 error including the npm and node versions, at:
+150 error     <http://github.com/isaacs/npm/issues>
+151 error System Windows_NT 6.1.7601
+152 error command "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "publish"
+153 error cwd D:\Projects\_mini_projects\formparams
+154 error node -v v0.10.25
+155 error npm -v 1.3.24
+156 verbose exit [ 1, true ]
