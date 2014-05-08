@@ -135,7 +135,7 @@
 					}
 					else if (value === 'true') value = true;
 					else if (value === 'false') value = false;
-					if (value === '') value = undefined;
+					if (value === '') value = null;
 				}
 
 				current = data;
